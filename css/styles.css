@@ -1,0 +1,64 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.row {
+    margin: 0;
+}
+
+.color {
+    color: #FFFFFF;
+}
+
+body {
+    background-color: lightblue;
+}
+
+h2, #buscador p {
+    color: #000000;
+}
+
+.btn-config {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#ciudadInvalida {
+    display: none;
+}
+
+#metricas {
+    display: none;
+}
+
+span {
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 2em;
+}
+
+#icono {
+    max-width: 100px;
+}
+
+.contorno {
+    border: 5px solid whitesmoke;
+    border-radius: 5em;
+}
+
+.iconos_data {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+#maps iframe {
+    max-width: 600px;
+    max-height: 300px;
+    border-radius: 3em;
+    margin-bottom: 1em;
+}

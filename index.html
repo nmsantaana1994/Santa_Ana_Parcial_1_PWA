@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      media="screen"
+    />
+
+    <!-- CSS Owner -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <title>Nicolás Santa Ana - Cátedra PWA</title>
+
+    <link rel="shortcut icon" href="img/favicon_b.png" />
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="text-center m-4 color">App del Clima - PWA</h1>
+
+      <section class="row justify-content-center">
+        
+        <!--Buscador de ciudad-->
+        <div class="col-12 text-center" id="buscador">
+          <p class="h3 mb-4">Ingrese una ciudad:</p>
+          <input type="text" id="inputBusqueda" class="d-block m-auto" placeholder="Ingrese una ciudad" autofocus/>
+          <button id="buscar" type="submit" class="btn btn-config mt-4">Buscar</button>
+        </div>
+
+        <!--Bloque en caso de no encontrar la ciudad especificada-->
+        <div class="col-12 text-center" id="ciudadInvalida">
+          <hr/>
+          <h2 class="text-center m-4">La ciudad ingresada no es valida</h2>
+          <p class="text-center">Por favor corrija los datos ingresados e intentelo nuevamente.</p>
+        </div>
+      </section>
+
+      <section class="row justify-content-center" id="metricas">
+        
+        <!--Nombre de la Ciudad-->
+        <div class="col-12">
+          <hr/>
+          <h2 class="text-center m-4 color" id="nombreCiudad"></h2>
+        </div>
+
+        <div class="row">
+          <div class="col-12 d-flex align-items-center justify-content-center p-4">
+            <div class="row">
+
+              <!--Estado del Tiempo-->
+              <div class="col-sm-6">
+                <img src="img/sin_imagen.jpeg" class="d-block m-auto contorno" id="icono"/>
+                <p class="text-center m-2 fw-bold color" id="estadoTiempo"></p>
+              </div>
+
+              <!--Temperatura Actual-->
+              <div class="col-sm-6 d-flex align-items-center justify-content-center">
+                <p class="text-center fs-4"><span id="temperatura"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mb-2">
+            <div class="row align-items-center">
+
+              <!--Sensación Térmica-->
+              <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center p-4">
+                <img src="img/iconos/sensacion_termica.png" alt="Sensacion térmica" class="iconos_data d-inline-block mx-2">
+                <p class="text-center m-2"><span id="sensacionTermica"></span></p>
+              </div>
+
+              <!--Temperatura Máxima-->
+              <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center p-4">
+                <img src="img/iconos/max_temperature.png" alt="Temperatura máxima" class="iconos_data d-inline-block mx-2">
+                <p class="text-center m-2"><span id="tempMaxima"></span></p>
+              </div>
+              <!--Temperatura Mínima-->
+              <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center p-4">
+                <img src="img/iconos/min_temperature.png" alt="Temperatura mínima" class="iconos_data d-inline-block mx-2">
+                <p class="text-center m-2"><span id="tempMinima"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+
+          <!--Humedad-->
+          <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center">
+            <p class="text-center m-4 d-inline-block"><span id="humedad"></span></p>
+            <img src="img/iconos/humidity_b.png" alt="Icono humedad" class="iconos_data d-inline-block">
+          </div>
+
+          <!--Presión-->
+          <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center">
+            <p class="text-center m-4 d-inline-block"><span id="presion"></span></p>
+            <img src="img/iconos/pressure_b_hpa.png" alt="Icono presion" class="iconos_data d-inline-block">
+          </div>
+
+          <!--Viento-->
+          <div class="col-12 col-sm-4 d-flex justify-content-center align-items-center">
+            <p class="text-center m-4 d-inline-block"><span id="viento"></span></p>
+            <img src="img/iconos/wind_b_km.png" alt="Icono viento" class="iconos_data d-inline-block">
+          </div>
+        </div>
+
+        <!--Mapa con la localización generado por DOM-->
+        <div class="row">
+          <div class="mapouter">
+            <div id="maps" class="d-flex justify-content-center"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+
+    <!-- Fetch -->
+    <script src="js/fetch.js"></script>
+  </body>
+</html>
